@@ -1,18 +1,26 @@
 @use "../presets" as *;
 @use "../mixins" as *;
 
-
-*{
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-html{
-    color: $color-gray;
-    font-family: $font-main;
-    font-size: $font-size;
+html {
+  color: $color-gray;
+  font-family: $font-main;
+  font-size: $font-size;
 }
 
-a{
-    text-decoration: none;
-    color: $color-light;
+h1 {
+  font-size: 3.75rem;
+  letter-spacing: 0.08em;
+  font-weight: 300;
+  font-family: $font-header;
+}
+
+a {
+  text-decoration: none;
+  color: $color-light;
 }
