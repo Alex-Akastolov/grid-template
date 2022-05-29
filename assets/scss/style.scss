@@ -1,4 +1,7 @@
-@use "../../libs/normalize.css/normalize";
+@use "../../libs/normalize.css/normalize.scss";
+
+@use "presets/variables" as *;
+@use "presets/skin" as *;
 
 @use "common/typography";
 @use "common/classes";
