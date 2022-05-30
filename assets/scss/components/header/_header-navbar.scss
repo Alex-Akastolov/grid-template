@@ -4,20 +4,87 @@
 .header-navbar {
   letter-spacing: 0.1em;
   &__btn {
-    display: none;
+    width: 30px;
+    height: 22.5px;
+    margin: $gap 0 $gap auto;
+    position: relative;
+    transform: rotate(0);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    @include md-min {
+      display: none;
+    }
+    &-row {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: $color-light;
+      border-radius: 3px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+      &:nth-child(1) {
+        top: 0px;
+        transform-origin: left center;
+      }
+      &:nth-child(2) {
+        top: 9px;
+        transform-origin: left center;
+      }
+      &:nth-child(3) {
+        top: 18px;
+        transform-origin: left center;
+      }
+    }
+    &--open span {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        top: -1px;
+        left: 4px;
+      }
+      &:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 19.5px;
+        left: 4px;
+      }
+    }
   }
   &__list {
-    @include unlist(0 -20px 0 0);
-    display: grid;
-    justify-content: end;
-    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+    @include md-min {
+      @include unlist(0 (-$gap-sm) 0 0);
+      display: grid;
+      gap: $gap;
+      justify-content: end;
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+    }
+    @include md {
+      @include unlist;
+      position: absolute;
+      top: 100%;
+      right: $gap;
+      display: none;
+      background-color: rgba($color-gray-dark, 0.75);
+    }
   }
   &__item {
-    margin: $gap $gap-sm;
+    @include md {
+      margin: $gap $gap-sm;
+    }
   }
   &__link {
     display: block;
-    padding: $gap $gap-sm;
+    @include md-min {
+      padding: $gap $gap-sm;
+    }
+    @include md {
+      padding: $gap-sm $gap;
+    }
     font-size: 1.125rem;
     transition: color 0.3s;
     &:hover,

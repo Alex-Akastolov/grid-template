@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   padding: 0.5em 1em;
-  font-size: 1.125rem;
   letter-spacing: 0.1em;
   transition: background-color 0.3s;
   &:hover,
@@ -19,6 +18,7 @@
   background-color: rgba($color-light, 0.1);
   border: 2px solid $color-light;
   @include lg-min {
+    font-size: 1.125rem;
     min-width: 250px;
     height: 60px;
   }
@@ -32,6 +32,7 @@
   }
 }
 .btn--primary {
+  font-size: 1.125rem;
   height: 60px;
   @include sm-min {
     min-width: 350px;
