@@ -7,7 +7,7 @@
     display: none;
   }
   &__list {
-    @include unlist(0 -19px 0 0);
+    @include unlist(0 -20px 0 0);
     display: grid;
     justify-content: end;
     grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
