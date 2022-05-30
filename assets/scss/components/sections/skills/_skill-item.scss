@@ -2,14 +2,19 @@
 @use "../../../mixins" as *;
 
 .skill-item {
-  background-color: $color-primary;
   position: relative;
+
   overflow: hidden;
+
+  background-color: $color-primary;
   &__title {
-    margin: 0;
-    @include abs-position;
     z-index: 1;
+
+    margin: 0;
+
     letter-spacing: 0.1em;
+
+    @include abs-position;
     @include md-min {
       font-size: 1.25rem;
     }
@@ -19,24 +24,30 @@
   }
   &__link {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: $gap;
+    justify-content: center;
+
     height: 100%;
+    padding: $gap;
+
     transition: color 0.5s;
   }
   &__image {
-    @include abs-position;
+    transition: transform 0.5s;
+
     background-position: 50% 50%;
     background-size: cover;
-    transition: transform 0.5s;
+
+    @include abs-position;
   }
 
   &__overlay {
-    background-color: $color-primary;
-    opacity: 0.8;
-    @include abs-position;
     transition: opacity 0.5s;
+
+    opacity: 0.8;
+    background-color: $color-primary;
+
+    @include abs-position;
   }
 
   &:hover {
