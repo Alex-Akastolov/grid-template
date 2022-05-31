@@ -8,7 +8,12 @@
     @extend %container;
   }
   &__title {
-    margin: 0 0 53px 0;
+    @include lg-md {
+      margin: 0 0 53px 0;
+    }
+    @include md-sm {
+      margin: 0 0 43px 0;
+    }
 
     text-align: center;
   }
