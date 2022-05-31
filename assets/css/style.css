@@ -718,6 +718,128 @@ a {
   content: "";
   background-color: rgba(99, 117, 136, 0.1);
 }
+
+.form {
+  padding: 30px 0;
+  background-color: #2d3651;
+}
+.form__container {
+  display: grid;
+  gap: 20px;
+  max-width: 1340px;
+  margin: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.form-item__input {
+  display: block;
+  width: 100%;
+  margin: 0;
+  line-height: 1.15;
+  height: 60px;
+  color: #ffffff;
+  padding-right: 30px;
+  padding-left: 30px;
+  -webkit-transition: background-color 0.5s, border-color 0.5s;
+  -o-transition: background-color 0.5s, border-color 0.5s;
+  transition: background-color 0.5s, border-color 0.5s;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 1.125rem;
+  border: none;
+  outline: none;
+}
+.form-item__input:hover {
+  border: 2px solid rgba(255, 255, 255, 0);
+  background-color: #637588;
+}
+.form-item input:placeholder {
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.posts__container {
+  max-width: 1340px;
+  margin: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.posts__grid {
+  display: grid;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.post-item {
+  color: #637588;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.post-item:hover {
+  color: #44596e;
+  background-color: #e5e5e5;
+}
+.post-item__link {
+  display: grid;
+  overflow: hidden;
+  height: 100%;
+  grid-template-rows: 300px 1fr;
+}
+.post-item__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #2d3651;
+}
+.post-item__caption {
+  display: grid;
+  padding: 20px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  color: #637588;
+  background-color: rgba(229, 229, 229, 0.5);
+}
+.post-item__caption h3 {
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+}
+.post-item:nth-of-type(1) {
+  grid-area: a1;
+}
+
+.post-item:nth-of-type(2) {
+  grid-area: a2;
+}
+
+.post-item:nth-of-type(3) {
+  grid-area: a3;
+}
+
+.post-item:nth-of-type(4) {
+  grid-area: a4;
+}
+
+.post-item:nth-of-type(5) {
+  grid-area: a5;
+}
+
+.post-item:nth-of-type(6) {
+  grid-area: a6;
+}
+
 @media (min-width: 576px) {
   .btn--primary {
     min-width: 350px;
@@ -732,11 +854,13 @@ a {
     margin-bottom: 30px;
   }
 }
+
 @media (min-height: 691px) {
   .skills__container {
     grid-auto-rows: calc(33.33vh - 13.3333333333px);
   }
 }
+
 @media (min-width: 768px) {
   .header-navbar__btn {
     display: none;
@@ -759,7 +883,11 @@ a {
   .skill-item__title {
     font-size: 1.25rem;
   }
+  .form__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
+
 @media (min-width: 992px) {
   h1 {
     font-size: 3.75rem;
@@ -791,7 +919,12 @@ a {
   .about__content p:first-of-type::after {
     right: -50px;
   }
+  .posts__grid {
+    grid-template-areas: "a1 a1 a2 a3" "a4 a5 a6 a6";
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
+
 @media (max-width: 991.8px) and (min-width: 768px) {
   h1 {
     font-size: 2.5rem;
@@ -819,7 +952,12 @@ a {
     margin-bottom: 2.625rem;
     font-size: 2rem;
   }
+  .posts__grid {
+    grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6";
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
+
 @media (max-width: 767.8px) {
   h1 {
     font-size: 1.875rem;
@@ -857,6 +995,7 @@ a {
     padding-bottom: 60px;
   }
 }
+
 @media (max-width: 767.8px) and (min-width: 576px) {
   .header-content__title {
     margin: 0 0 43px 0;
@@ -873,12 +1012,21 @@ a {
     margin-bottom: 2.25rem;
     font-size: 1.5rem;
   }
+  .form__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .posts__grid {
+    grid-template-areas: "a1 a2" "a3 a4" "a5 a6";
+    grid-template-columns: 1fr 1fr;
+  }
 }
+
 @media (max-height: 690px) {
   .skills__container {
     grid-auto-rows: calc(230px - 13.3333333333px);
   }
 }
+
 @media (max-width: 575.8px) {
   .btn--primary {
     width: 100%;
@@ -910,5 +1058,9 @@ a {
     margin-bottom: 2.25rem;
     font-size: 1.5rem;
     text-align: center;
+  }
+  .posts__grid {
+    grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6";
+    grid-template-areas: 1fr;
   }
 }
