@@ -15,6 +15,11 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+  &-item:nth-of-type(1) {
+    @include md-sm {
+      grid-column: 1 / span 2;
+    }
+  }
   &-item {
     &__input {
       display: block;
@@ -55,6 +60,7 @@
     border-color: rgba($color-light, 0);
     border-bottom-color: rgba($color-light, 0.2);
     background-color: rgba($color-light, 0.1);
+    transition: 0.5s;
     &:hover,
     &:focus {
       border-color: $color-light;
