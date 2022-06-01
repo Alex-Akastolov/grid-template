@@ -7,10 +7,7 @@
   &__container {
     display: grid;
     gap: $gap;
-    max-width: 1340px;
-    margin: auto;
-    padding-right: 20px;
-    padding-left: 20px;
+    @extend %container;
     @include md-min {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -22,28 +19,47 @@
     &__input {
       display: block;
       width: 100%;
-      margin: 0;
-      line-height: 1.15;
       height: 60px;
       color: $color-light;
       padding-right: 30px;
       padding-left: 30px;
-      transition: background-color 0.5s, border-color 0.5s;
-      letter-spacing: 0.1em;
-      border-bottom: 2px solid $color-light;
+      letter-spacing: 0.15em;
+      border: 2px solid rgba($color-light, 0);
       border-bottom-color: rgba($color-light, 0.25);
       background-color: rgba($color-light, 0.05);
       font-size: 1.125rem;
-      border: none;
+      transition: background-color 0.5s, border-color 0.5s;
       outline: none;
-
-      &:hover {
-        border: 2px solid rgba($color-light, 0);
-        background-color: rgba($color-gray, 1);
+      &:hover,
+      &:focus {
+        border-color: rgba($color-light, 0.15);
+        background-color: rgba($color-light, 0.15);
+        border-bottom-color: $color-light;
+      }
+      //   @include sm-min {
+      //     min-width: 350px;
+      //   }
+    }
+    input::placeholder {
+      color: rgba($color-light, 0.2);
+      &:hover,
+      &:focus {
+        color: rgba($color-light, 0.5);
       }
     }
-    input:placeholder {
-      color: rgba($color-light, 0.05);
+  }
+
+  .btn--primary {
+    width: 100%;
+    color: $color-light;
+    border-color: rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.2);
+    background-color: rgba($color-light, 0.1);
+    &:hover,
+    &:focus {
+      border-color: $color-light;
+      background-color: $color-accent;
+      cursor: pointer;
     }
   }
 }
