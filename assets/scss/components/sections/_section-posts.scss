@@ -16,6 +16,30 @@
   }
   &__container {
     @extend %container;
+    h2 {
+      margin-top: 0;
+      font-family: $font-header;
+      color: $color-primary;
+      line-height: 1.2em;
+      letter-spacing: 0.1em;
+      @include lg-min {
+        margin-bottom: 3rem;
+        font-size: 2.5rem;
+      }
+      @include lg-md {
+        margin-bottom: 2.625rem;
+        font-size: 2rem;
+      }
+      @include md-sm {
+        margin-bottom: 2.25rem;
+        font-size: 1.5rem;
+      }
+      @include sm {
+        margin-bottom: 2.25rem;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    }
   }
   &__grid {
     display: grid;
@@ -39,6 +63,14 @@
     }
   }
   &__actions {
+    .btn--primary {
+      @include sm-min {
+        width: 350px;
+      }
+      @include sm {
+        width: 100%;
+      }
+    }
     @include sm-min {
       display: flex;
       justify-content: center;

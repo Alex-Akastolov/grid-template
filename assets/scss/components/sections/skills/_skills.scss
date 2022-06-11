@@ -3,7 +3,6 @@
 $local-gap: calc(40px / 3);
 
 .skills {
-  @extend %container;
   @include sm-min {
     padding: $gap-sm;
   }
@@ -12,7 +11,6 @@ $local-gap: calc(40px / 3);
   }
   &__container {
     display: grid;
-
     @include lg-min {
       grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
       grid-template-columns: repeat(4, 1fr);
@@ -50,6 +48,14 @@ $local-gap: calc(40px / 3);
 
     @include sm-min {
       margin-bottom: $gap-lg;
+    }
+    .btn--primary {
+      @include sm-min {
+        width: 350px;
+      }
+      @include sm {
+        width: 100%;
+      }
     }
   }
 }

@@ -28,6 +28,7 @@
   &__container {
     display: grid;
     @extend %container;
+
     @include lg-min {
       gap: 100px;
       grid-template-columns: 1fr 271px;
@@ -89,7 +90,16 @@
         @include lg-min {
           right: -50px;
         }
+        @include lg-md {
+          right: -20px;
+        }
+        @include md-sm {
+          right: -10px;
+        }
       }
+    }
+    p:last-of-type {
+      margin: 0;
     }
   }
 }

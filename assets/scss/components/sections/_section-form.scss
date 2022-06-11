@@ -41,9 +41,6 @@
         background-color: rgba($color-light, 0.15);
         border-bottom-color: $color-light;
       }
-      //   @include sm-min {
-      //     min-width: 350px;
-      //   }
     }
     input::placeholder {
       color: rgba($color-light, 0.2);

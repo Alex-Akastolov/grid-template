@@ -6,21 +6,26 @@
   z-index: 1;
   &__container {
     @extend %container;
+    display: grid;
   }
   &__title {
-    @include lg-md {
-      margin: 0 0 53px 0;
-    }
-    @include md-sm {
-      margin: 0 0 43px 0;
-    }
-
     text-align: center;
+    @include lg-min {
+      margin: 0 0 53px 0;
+      font-size: 3.75rem;
+    }
+    @include lg-md {
+      margin: 0 0 43px;
+      font-size: 2.5rem;
+    }
+    @include md {
+      margin: 0 0 33px;
+      font-size: 1.875rem;
+    }
   }
   &__actions {
     display: flex;
     justify-content: center;
-
     gap: $gap;
     @include sm {
       align-items: center;
