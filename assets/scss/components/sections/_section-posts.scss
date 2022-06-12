@@ -59,7 +59,7 @@
     }
     @include sm {
       grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6";
-      grid-template-areas: 1fr;
+      grid-template-columns: 1fr;
     }
   }
   &__actions {
@@ -80,7 +80,6 @@
 
 .post-item {
   transition: 0.5s;
-  // background-color: $color-light;
   background-color: rgba($color-gray-light, 0.5);
   h3,
   p {
@@ -121,8 +120,6 @@
   &__caption {
     display: grid;
     padding: $gap;
-    // height: 100%;
-    // text-align: center;
     align-content: center;
     color: $color-gray;
     h3 {

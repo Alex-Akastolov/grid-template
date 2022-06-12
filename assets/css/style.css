@@ -1249,7 +1249,7 @@ a {
   }
   .posts__grid {
     grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6";
-    grid-template-areas: 1fr;
+    grid-template-columns: 1fr;
   }
   .posts__actions .btn--primary {
     width: 100%;
